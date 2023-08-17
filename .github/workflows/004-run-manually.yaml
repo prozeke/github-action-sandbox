@@ -33,13 +33,3 @@ jobs:
         run: echo "${{ toJson(github.event.inputs) }}"
       - name: Listing defined variables
         run: set -o posix; set
-
-  try-matrix:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        my_matrix: [ a, b, c]
-    steps:
-    -  name: echo current matrix index
-       run: echo ${{ matrix.my_matrix }}

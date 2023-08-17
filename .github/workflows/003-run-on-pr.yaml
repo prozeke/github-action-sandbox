@@ -70,3 +70,13 @@ jobs:
         run: |
           echo "For external PR. No secrets will be available"
           echo "${{ toJson(secrets) }}"
+
+  try-matrix:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        my_matrix: [ a, b, c ]
+    steps:
+      - name: echo current matrix index
+        run: echo ${{ matrix.my_matrix }}
