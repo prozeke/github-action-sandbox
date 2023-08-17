@@ -73,10 +73,12 @@ jobs:
 
   try-matrix:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         my_matrix: [ a, b, c ]
+        include:
+        - my_matrix: a
+          new_value: 1
     steps:
       - name: echo current matrix index
-        run: echo ${{ matrix.my_matrix }}
+        run: echo ${{ matrix.my_matrix }} ${{ matrix.new_value }}
