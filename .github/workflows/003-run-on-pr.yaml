@@ -78,9 +78,7 @@ jobs:
         my_matrix: [ a, b, c ]
         include:
         - my_matrix: a
-          new_value: 1
-        - my_matrix: a
-          new_value: 2
+          new_value: [1, 2]
     steps:
       - name: echo current matrix index
         run: echo ${{ matrix.my_matrix }} ${{ matrix.new_value }}
